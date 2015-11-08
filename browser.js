@@ -1,1 +1,1 @@
-require('./index.js')();
+require('.')();

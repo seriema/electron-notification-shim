@@ -16,7 +16,7 @@ The `msg` is a simple object: `{ title, options }`, which matches the two parame
 ### Example
 
 ```js
-// Main process
+// Main process, main.js
 'use strict';
 const app = require('app');
 const ipc = require('ipc');
