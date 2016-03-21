@@ -2,7 +2,7 @@
 
 // Electron doesn't support notifications in Windows yet. https://github.com/atom/electron/issues/262
 // So we hijack the Notification API.'
-const ipc = require('ipc');
+const ipc = require('electron').ipcRenderer;
 
 module.exports = () => {
 	const OldNotification = Notification;
