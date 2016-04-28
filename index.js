@@ -21,6 +21,16 @@ module.exports = () => {
 			options
 		});
 
+		// Shim onclick event
+		var notification;
+		setTimeout(function () {
+			var onclickOld = notification.onclick;
+			notification.onclick = function () {
+				ipc.send('notification-onclick-shim', notification);
+				if (onclickOld) onclickOld();
+			};
+		}, 1);
+
 		// Apply overrides
 		options = Object.assign({}, options);
 		if (settings.forceSilent) options.silent = true;
@@ -28,7 +38,7 @@ module.exports = () => {
 
 		// Send the native Notification.
 		// You can't catch it, that's why we're doing all of this. :)
-		return new OldNotification(title, options);
+		return notification = new OldNotification(title, options);
 	};
 
 	Notification.prototype = OldNotification.prototype;
