@@ -1,1 +1,2 @@
-require('../.')();
+// Include the shim
+require('./.')();

@@ -33,12 +33,13 @@
   },
   "homepage": "https://github.com/seriema/electron-notification-shim#readme",
   "devDependencies": {
-    "electron-prebuilt": "^0.34.3",
-    "xo": "^0.10.1"
+    "electron-prebuilt": "^0.37.8",
+    "xo": "^0.15.0"
   },
   "xo": {
     "esnext": true,
     "rules": {
+      "linebreak-style": 0,
       "no-native-reassign": [
         2,
         {
