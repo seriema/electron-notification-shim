@@ -39,6 +39,7 @@
   "xo": {
     "esnext": true,
     "rules": {
+      "linebreak-style": 0,
       "no-native-reassign": [
         2,
         {

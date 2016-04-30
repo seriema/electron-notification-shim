@@ -1,8 +1,8 @@
 // Main process
 'use strict';
+const path = require('path');
 const app = require('app');
 const ipcMain = require('electron').ipcMain;
-const path = require('path');
 const BrowserWindow = require('browser-window');
 
 app.on('ready', () => {
