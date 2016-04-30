@@ -1,6 +1,6 @@
 {
   "name": "electron-notification-shim",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Get Notification API events in Electron main-process. Perfect for adding Notification toasters in Windows with node-notifier or other solution.",
   "repository": {
     "type": "git",
