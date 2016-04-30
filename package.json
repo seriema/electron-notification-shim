@@ -11,6 +11,11 @@
     "email": "seriema@gmail.com",
     "url": "http://johansson.jp"
   },
+  "contributors": [
+    "Martin Sandström <maartiin_91@hotmail.com> (http://martinsandstrom.github.io)",
+    "Esbjörn Ekberg <oakninja@gmail.com> (http://oak.ninja/)",
+    "Alex Buznik <shu@buznik.net> (http://buznik.com/)"
+  ],
   "scripts": {
     "start": "electron test.js",
     "test": "xo"
