@@ -24,6 +24,7 @@ Check the [electron-notification-shim-demos](https://github.com/seriema/electron
 
 #### Sample
 
+**main.js**:
 ```js
 // Main process, main.js
 'use strict';
@@ -53,6 +54,7 @@ app.on('ready', () => {
 });
 ```
 
+**browser.js**
 ```js
 // Renderer process, browser.js
 require('electron-notification-shim')();
