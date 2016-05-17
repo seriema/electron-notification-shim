@@ -1,8 +1,10 @@
 # electron-notification-shim [![Build Status](https://travis-ci.org/seriema/electron-notification-shim.svg?branch=master)](https://travis-ci.org/seriema/electron-notification-shim)
 
-> Get Notification API events in Electron main-process. Perfect for adding Notification toasters in Windows with node-notifier or other solution.
+> Get Notification API events in the Electron main-process. Perfect for adding Notification toasters in Windows with [node-notifier](https://github.com/mikaelbr/node-notifier), [electron-toaster](https://github.com/s-a/electron-toaster) or other solution.
 
 ## Usage
+
+*Note: Check the [electron-notification-shim-demos](https://github.com/seriema/electron-notification-shim-demos) repo for other uses, or look at how [HipsterChat](https://github.com/kvasir/HipsterChat) uses it only on Windows.*
 
 Include it in your rendering-view like this:
 
