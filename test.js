@@ -20,7 +20,4 @@ app.on('ready', () => {
 
 	// Just to test. Don't do this at home, kids. :)
 	win.loadURL(`https://google.com`);
-	win.webContents.on('did-finish-load', () => {
-		win.webContents.executeJavaScript('new Notification("Hello!", {body: "Notification world!"})');
-	});
 });
