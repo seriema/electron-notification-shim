@@ -15,12 +15,12 @@ app.on('ready', () => {
 
 	// Listen for notification events.
 	ipcMain.on('notification-shim', (e, msg) => {
-		console.log(`Title: ${msg.title}, Content: ${msg.options.content}`);
+		console.log(`Title: ${msg.title}, Body: ${msg.options.body}`);
 	});
 
 	// Just to test. Don't do this at home, kids. :)
 	win.loadURL(`https://google.com`);
 	win.webContents.on('did-finish-load', () => {
-		win.webContents.executeJavaScript('new Notification("Hello!", {content: "Notification world!"})');
+		win.webContents.executeJavaScript('new Notification("Hello!", {body: "Notification world!"})');
 	});
 });
