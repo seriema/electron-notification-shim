@@ -25,7 +25,11 @@ module.exports = () => {
 
 		// Send the native Notification.
 		// You can't catch it, that's why we're doing all of this. :)
-		return new OldNotification(title, options);
+		let notification =  new OldNotification(title, options);
+		notification.onclick = function (event) {
+			alert('Try to override onclick.');
+		};
+		return notification;
 	};
 
 	Notification.prototype = OldNotification.prototype;
