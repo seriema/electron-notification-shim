@@ -1,5 +1,11 @@
+let options = {
+	onclick: (event) => {
+		alert('The overriding onclick.');
+	}
+};
+
 // Include the shim. Note: Your code should use `require('electron-notification-shim')();`.
-require('./.')();
+require('./.')(options);
 
 
 var notification = new Notification('The title', {

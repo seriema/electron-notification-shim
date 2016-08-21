@@ -11,8 +11,14 @@ try {
 	ipc = require('ipc');
 }
 
-module.exports = () => {
+// Default settings
+const defaultSettings = {
+	onclick: null
+};
+
+module.exports = (overrideSettings) => {
 	const OldNotification = Notification;
+	const settings = Object.assign(defaultSettings, overrideSettings);
 
 	Notification = function (title, options) {
 		// Send this to main thread.
@@ -26,9 +32,12 @@ module.exports = () => {
 		// Send the native Notification.
 		// You can't catch it, that's why we're doing all of this. :)
 		let notification =  new OldNotification(title, options);
-		notification.onclick = function (event) {
-			alert('Try to override onclick.');
-		};
+		if (settings.onclick) {
+			notification.onclick = function (event) {
+				settings.onclick(event);
+				// TODO: ipc.send('notification-shim-onclick', event);
+			};
+		}
 		return notification;
 	};
 

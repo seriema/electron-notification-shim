@@ -20,6 +20,14 @@ That's all. Now you'll receive `notification-shim` events in your main-process, 
 
 The `msg` is a simple object: `{ title, options }`, which matches the two parameters sent to [new Notification(title, options)](https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification). You can send an event back with [e.returnValue](http://electron.atom.io/docs/v0.37.8/api/ipc-main/#eventreturnvalue) or [e.sender.send()](http://electron.atom.io/docs/v0.37.8/api/ipc-main/#eventsender) if you want to react to it in the rendering view as well.
 
+### Options
+
+You can send an `options` object when you initialize: `require('electron-notification-shim')(options);`.
+
+#### `onclick`
+
+A method for overriding the original `Notification.onclick`. Allows you to add a custom click handler instead of what was attached by the original notification sender. E.g. 
+
 ### Example code
 
 #### Demos
