@@ -31,28 +31,28 @@ Check the [electron-notification-shim-demos](https://github.com/seriema/electron
 ```js
 // Main process, main.js
 'use strict';
-const app = require('app');
-const ipc = require('ipc');
 const path = require('path');
+const app = require('app');
+const ipcMain = require('electron').ipcMain;
 const BrowserWindow = require('browser-window');
 
 app.on('ready', () => {
 	const win = new BrowserWindow({
-		'web-preferences': {
-			// Load `electron-notification-shim` in rendering view, by requiring it in your preloaded script.
+		webPreferences: {
+			// Load `electron-notification-shim` in rendering view.
 			preload: path.join(__dirname, 'browser.js')
 		}
 	});
 
 	// Listen for notification events.
-	ipc.on('notification-shim', (e, msg) => {
-		console.log(`Title: ${msg.title}, Content: ${msg.options.content}`);
+	ipcMain.on('notification-shim', (e, msg) => {
+		console.log(`Title: ${msg.title}, Body: ${msg.options.body}`);
 	});
 
 	// Just to test. Don't do this at home, kids. :)
-	win.loadUrl(`https://google.com`);
+	win.loadURL(`https://google.com`);
 	win.webContents.on('did-finish-load', () => {
-		win.webContents.executeJavaScript('new Notification("Hello!", {content: "Notification world!"})');
+		win.webContents.executeJavaScript('new Notification("Hello!", {body: "Notification world!"})');
 	});
 });
 ```
