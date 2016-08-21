@@ -6,7 +6,7 @@ let ipc;
 try {
 	// Using electron >=0.35
 	ipc = require('electron').ipcRenderer;
-} catch (e) {
+} catch (err) {
 	// Assume it's electron <0.35
 	ipc = require('ipc');
 }
