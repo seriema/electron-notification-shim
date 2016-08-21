@@ -1,4 +1,4 @@
-# electron-notification-shim [![Build Status](https://travis-ci.org/seriema/electron-notification-shim.svg?branch=master)](https://travis-ci.org/seriema/electron-notification-shim)
+# electron-notification-shim [![Build Status](https://travis-ci.org/seriema/electron-notification-shim.svg?branch=master)](https://travis-ci.org/seriema/electron-notification-shim) [![devDependencies Status](https://david-dm.org/seriema/electron-notification-shim/dev-status.svg)](https://david-dm.org/seriema/electron-notification-shim?type=dev)
 
 > Get Notification API events in Electron main-process. Perfect for adding Notification toasters in Windows with node-notifier or other solution.
 
